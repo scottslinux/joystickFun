@@ -47,7 +47,7 @@ int main()
             ClearBackground(GRAY);
 
             DrawRectangle(0,GetScreenHeight()*.85,GetScreenWidth(),GetScreenHeight()*.15,BLACK);
-            string gamepd = GetGamepadName(2);
+            string gamepd = GetGamepadName(0);
             string title="Joystick Device: "+gamepd;
             DrawTextEx(digital,title.c_str(),{GetScreenWidth()*.1,GetScreenHeight()*.9},80,0,GREEN);
             DrawTextureEx(joyshadow,{GetScreenWidth()*.22,GetScreenHeight()*.25},0,1.3,WHITE);
@@ -83,8 +83,8 @@ int main()
 //--------------------------------------
             bool moveflag=false;
 
-            float axis1=GetGamepadAxisMovement(2,0);    //up/down
-            float axis2=GetGamepadAxisMovement(2,1);    //left/right
+            float axis1=GetGamepadAxisMovement(0,0);    //up/down
+            float axis2=GetGamepadAxisMovement(0,1);    //left/right
             if(abs(axis1)<0.01) axis1=0;
             if(abs(axis2)<0.01) axis2=0;
 
@@ -105,8 +105,8 @@ int main()
 
 
 
-            float axis3=GetGamepadAxisMovement(2,2);
-            float axis4=GetGamepadAxisMovement(2,3);
+            float axis3=GetGamepadAxisMovement(0,2);
+            float axis4=GetGamepadAxisMovement(0,3);
             if(abs(axis3)<0.01) axis3=0;
             if(abs(axis4)<0.01) axis4=0;
 
@@ -127,8 +127,8 @@ int main()
                                     {joy.width/2,joy.height/1.6},axis4*90+90,WHITE);
 
 
-            float axis5=GetGamepadAxisMovement(2,4);
-            float axis6=GetGamepadAxisMovement(2,5);
+            float axis5=GetGamepadAxisMovement(0,4);
+            float axis6=GetGamepadAxisMovement(0,5);
             if(abs(axis5)<0.01) axis5=0;
             if(abs(axis6)<0.01) axis6=0;
 
